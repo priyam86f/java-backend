@@ -1,0 +1,17 @@
+type Query {
+    books: [Book]
+    author: [Book]       # If you want to retrieve books by author
+    bookById(id: Int!): Book  # If you want to retrieve a book by its ID
+}
+
+type Mutation {
+  updateBook(id: Int!, author: String!, title: String!): Book
+  addBook(author: String!, title: String!): Book
+  deleteBook(id: Int!): Book
+}
+
+type Book {
+    id: Int!
+    author: String!
+    title: String!
+}
